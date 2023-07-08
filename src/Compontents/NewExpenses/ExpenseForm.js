@@ -3,42 +3,54 @@ import './ExpenseForm.css';
 
 const ExpenseForm=()=>{
    
-    // const [entertedTitle,setTitle]=useState('');
-    // const [entertedAmount,setAmount]=useState('');
-    // const [entertedDate,setDate]=useState('');
+    const [entertedTitle,setTitle]=useState('');
+    const [entertedAmount,setAmount]=useState('');
+    const [entertedDate,setDate]=useState('');
 
-    const [userInput,setUserInput]=useState({
-        enteredTitle: '',
-        enteredAmount:'',
-        enteredDate: '',
+    // const [userInput,setUserInput]=useState({
+    //     enteredTitle: '',
+    //     enteredAmount:'',
+    //     enteredDate: '',
 
-    })
+    // })
 
 
     const titleHandler=(event)=>{
-        //setTitle(event.target.value)
-        setUserInput((PrevState)=>{
-            return {...PrevState,enteredTitle:event.target.value}
-        })
+        setTitle(event.target.value)
+        
 
     }
     const amountHandler=(event)=>{
-        //setAmount(event.target.value)
-        setUserInput((PrevState)=>{
-            return {...PrevState,enteredAmount:event.target.value}
-        })
+        setAmount(event.target.value)
+        // setUserInput(()=>{
+        //     return {...userInput,enteredAmount:event.target.value}
+        // })
     }
     const dateHandler=(event)=>{
-       // setDate(event.target.value)
-       setUserInput((PrevState)=>{
-        return {...PrevState,enteredDate:event.target.value
-           // console.log(enteredDate)
-        }
+       setDate(event.target.value)
+    //    setUserInput(()=>{
+    //     return {...userInput,enteredDate:event.target.value
+    //        // console.log(enteredDate)
+    //     }
        
-    })
+    //})
+          const submitHandler=(event)=>{
+            event.preventDefault();
+
+            const ExpenseData={
+                title:entertedTitle,
+                amount:entertedAmount,
+                 date:new date(entertedDate)
+            };
+            console.log(ExpenseData);
+          };
+          
+
+
+
     }
     return(
-        <form>
+        <form onSubmit={submitHandler}>
             <div className='new-expense__controls'>
                 <div className='new-expense__control'>
                     <label>Title</label>

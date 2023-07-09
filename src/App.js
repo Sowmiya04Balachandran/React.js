@@ -35,9 +35,19 @@ function App() {
       location:'FurnitureShop' ,
     }
   ];
+
+const addExpenseHandler=expense=>{
+  console.log('In a App.js');
+  console.log(expense)
+  // setExpense((prevExpense)=>{
+  // return[expense,...prevExpense]
+  // })
+}
+
+
   return (
    <div>
-    <NewExpenses />
+    <NewExpenses onAddExpense={addExpenseHandler} />
     <Expenses items={expenses} />
    </div>
 

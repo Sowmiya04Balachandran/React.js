@@ -8,7 +8,8 @@ function ExpenseItem(props) {
   
     
     return (
-      //<h2>Expense Item!</h2>
+      <li>
+     
       <div className='expense-item'>
 
 <ExpenseDate date ={props.date} />
@@ -17,6 +18,7 @@ function ExpenseItem(props) {
 
 
       </div>
+      </li>
     );
   }
   export default ExpenseItem;
